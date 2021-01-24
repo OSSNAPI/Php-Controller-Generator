@@ -1,0 +1,2828 @@
+{
+	"info": {
+		"_postman_id": "0272e605-bc4c-49e1-a402-c35257da9d4c",
+		"name": "OSSNAPI v1.1 - Controller Auto Generation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Returns details about a particular user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{user_id}}",
+							"type": "string",
+							"description": "(Required) ID of the user"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Details about a user by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 10,\n \"name\": \"Pranjal Pandey\",\n \"username\": \"physcocode\",\n \"email\": \"pranjal@corpusvision.com\",\n \"img\": \"exapmle.com/physcocode/profile.png\",\n \"meta\": {\n  \"gender\": \"Male\",\n  \"city\": \"Mumbai\",\n  \"country\": \"India\"\n }\n}"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update detail about a single user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 10,\n    \"name\": \"Pranjal P\",\n    \"username\": \"physcocode\",\n    \"email\": \"pranjal@corpusvision.com\",\n    \"img\": \"exapmle.com/physcocode/profile.png\",\n    \"meta\": {\n        \"gender\": \"Male\",\n        \"city\": \"Mumbai\",\n        \"country\": \"India\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{user_id}}",
+							"type": "string",
+							"description": "(Required) ID of the user"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 21,\n    \"name\": \"Ellie D\",\n    \"username\": \"its_ellie\",\n    \"email\": \"ellie@gmail.com\",\n    \"img\": \"exapmle.com/ellie/profile.png\",\n    \"meta\": {\n        \"gender\": \"Female\",\n        \"city\": \"New York\",\n        \"country\": \"USA\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Updated user detail",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 21,\n    \"name\": \"Ellie D\",\n    \"username\": \"its_ellie\",\n    \"email\": \"ellie@gmail.com\",\n    \"img\": \"exapmle.com/ellie/profile.png\",\n    \"meta\": {\n        \"gender\": \"Female\",\n        \"city\": \"New York\",\n        \"country\": \"USA\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 10,\n \"name\": \"Pranjal P\",\n \"username\": \"physcocode\",\n \"email\": \"pranjal@corpusvision.com\",\n \"img\": \"exapmle.com/physcocode/profile.png\",\n \"meta\": {\n  \"gender\": \"Male\",\n  \"city\": \"Mumbai\",\n  \"country\": \"India\"\n }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a single user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{user_id}}",
+							"type": "string",
+							"description": "(Required) ID of the user"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "User successfully deleted",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"user successfully deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a new user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 10,\n    \"name\": \"Pranjal P\",\n    \"username\": \"physcocode\",\n    \"email\": \"pranjal@corpusvision.com\",\n    \"img\": \"exapmle.com/physcocode/profile.png\",\n    \"meta\": {\n        \"gender\": \"Male\",\n        \"city\": \"Mumbai\",\n        \"country\": \"India\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 21,\n    \"name\": \"Ellie D\",\n    \"username\": \"its_ellie\",\n    \"email\": \"ellie@gmail.com\",\n    \"img\": \"exapmle.com/ellie/profile.png\",\n    \"meta\": {\n        \"gender\": \"Female\",\n        \"city\": \"New York\",\n        \"country\": \"USA\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "User successfully added",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 21,\n    \"name\": \"Ellie D\",\n    \"username\": \"its_ellie\",\n    \"email\": \"ellie@gmail.com\",\n    \"img\": \"exapmle.com/ellie/profile.png\",\n    \"meta\": {\n        \"gender\": \"Female\",\n        \"city\": \"New York\",\n        \"country\": \"USA\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 201,\n \"message\": \"user successfully created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Returns list of users based on limit and offset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users?offset=0&limit=20&type=all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0",
+							"description": "Number of items to skip before returning the results."
+						},
+						{
+							"key": "limit",
+							"value": "20",
+							"description": "Maximum number of items to return."
+						},
+						{
+							"key": "type",
+							"value": "all",
+							"description": "(Required) Type of user to be retrived."
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?offset=0&limit=20&type=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "type",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "List of users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?offset=0&limit=20&type=all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "type",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 21,\n  \"name\": \"Ellie D\",\n  \"username\": \"its_ellie\",\n  \"email\": \"ellie@gmail.com\",\n  \"img\": \"exapmle.com/ellie/profile.png\",\n  \"meta\": {\n   \"gender\": \"Female\",\n   \"city\": \"New York\",\n   \"country\": \"USA\"\n  }\n },\n {\n  \"id\": 10,\n  \"name\": \"Pranjal Pandey\",\n  \"username\": \"physcocode\",\n  \"email\": \"pranjal@corpusvision.com\",\n  \"img\": \"exapmle.com/physcocode/profile.png\",\n  \"meta\": {\n   \"gender\": \"Male\",\n   \"city\": \"Mumbai\",\n   \"country\": \"India\"\n  }\n },\n {\n  \"id\": 10,\n  \"name\": \"Vineet Singh\",\n  \"username\": \"Veneed\",\n  \"email\": \"vineet@corpusvision.com\",\n  \"img\": \"exapmle.com/veneed/profile.png\",\n  \"meta\": {\n   \"gender\": \"Male\",\n   \"city\": \"Mumbai\",\n   \"country\": \"India\"\n  }\n }\n]"
+				}
+			]
+		},
+		{
+			"name": "Returns details about a particular post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<head>",
+							"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/css/uikit.min.css\" />",
+							"</head>",
+							"<body>",
+							"<div class=\"uk-card uk-card-default uk-width-1-2 uk-align-center\">",
+							"    <div class=\"uk-card-header\">",
+							"        <div class=\"uk-grid-small uk-flex-middle\" uk-grid>",
+							"            <div class=\"uk-width-auto\">",
+							"                <img class=\"uk-border-circle\" width=\"40\" height=\"40\" src=\"https://www.bathcollege.ac.uk/wp-content/uploads/2018/05/default-avatar.png\">",
+							"            </div>",
+							"            <div class=\"uk-width-expand\">",
+							"                <h3 class=\"uk-card-title uk-margin-remove-bottom\">{{r.owner.name}}</h3>",
+							"                <p class=\"uk-text-meta uk-margin-remove-top\">{{r.owner.username}}</p>",
+							"            </div>",
+							"        </div>",
+							"    </div>",
+							"                <div class=\"uk-card-media-top\">",
+							"                <img src=\"https://images.unsplash.com/photo-1611406191562-30bcd6478dc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80\" alt=\"\">",
+							"            </div>",
+							"    <div class=\"uk-card-body\">",
+							"        <p style:'font-size:8px' >{{r.meta.status}}</p>",
+							"    </div>",
+							"    <div class=\"uk-card-footer\">",
+							"        <a href=\"#\" class=\"uk-button uk-button-text\">{{r.like_count}} likes</a> &nbsp;",
+							"        <a href=\"#\" class=\"uk-button uk-button-text\">{{r.comment_count}} comments</a>",
+							"    </div>",
+							"</div>",
+							"",
+							"<script src=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit.min.js\"></script>",
+							"<script src=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit-icons.min.js\"></script>",
+							"</body>",
+							"",
+							"`",
+							"",
+							"pm.visualizer.set(template, {",
+							"    // Pass the response body parsed as JSON as `data`",
+							"    r: pm.response.json()",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/posts/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{post_id}}",
+							"type": "string",
+							"description": "(Required) ID of the post"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Details about a post by its ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 13,\n \"type\": \"Image\",\n \"owner\": {\n  \"id\": 10,\n  \"name\": \"Pranjal Pandey\",\n  \"username\": \"physcocoede\",\n  \"image\": \"example.com/physcocode/profile.png\"\n },\n \"created_at\": \"2017-07-21T17:32:28Z\",\n \"visibility\": \"public\",\n \"meta\": {\n  \"status\": \"I am a example status update with image\",\n  \"image\": \"example.com/image.png\"\n },\n \"like_count\": 9,\n \"comment_count\": 12\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a single post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/posts/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{post_id}}",
+							"type": "string",
+							"description": "(Required) ID of the post"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Post successfully deleted",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"post successfully deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a new post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"owner\": 12,\n    \"visibility\": \"public\",\n    \"id\": 12,\n    \"created_at\": \"2017-07-21T17:32:28Z\",\n    \"meta\": {\n     \"status\": \"I am a example status update with image\",\n     \"image\": \"example.com/image.png\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/posts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10,\n    \"type\": \"image\",\n    \"owner\": 10,\n    \"created_at\": \"2017-07-21T17:32:28Z\",\n    \"visibility\": \"public\",\n    \"meta\": {\n        \"status\": \"I am a example status update with image\",\n        \"image\": \"example.com/image.png\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/posts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Post Successfully Added",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10,\n    \"type\": \"image\",\n    \"owner\": 10,\n    \"created_at\": \"2017-07-21T17:32:28Z\",\n    \"visibility\": \"public\",\n    \"meta\": {\n        \"status\": \"I am a example status update with image\",\n        \"image\": \"example.com/image.png\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/posts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 201,\n \"message\": \"post successfully created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Returns list of posts based on limit and offset",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<head>",
+							"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/css/uikit.min.css\" />",
+							"</head>",
+							"<body>",
+							"{{#each r}}",
+							"<div class=\"uk-card uk-card-default uk-width-1-2 uk-align-center\">",
+							"    <div class=\"uk-card-header\">",
+							"        <div class=\"uk-grid-small uk-flex-middle\" uk-grid>",
+							"            <div class=\"uk-width-auto\">",
+							"                <img class=\"uk-border-circle\" width=\"40\" height=\"40\" src=\"https://www.bathcollege.ac.uk/wp-content/uploads/2018/05/default-avatar.png\">",
+							"            </div>",
+							"            <div class=\"uk-width-expand\">",
+							"                <h3 class=\"uk-card-title uk-margin-remove-bottom\">{{owner.name}}</h3>",
+							"                <p class=\"uk-text-meta uk-margin-remove-top\">{{owner.username}}</p>",
+							"            </div>",
+							"        </div>",
+							"    </div>",
+							"                {{#if meta.image}}",
+							"                <div class=\"uk-card-media-top\">",
+							"                <img src=\"https://images.unsplash.com/photo-1611406191562-30bcd6478dc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80\" alt=\"\">",
+							"            </div>",
+							"            {{/if}}",
+							"    <div class=\"uk-card-body\">",
+							"        <p style:'font-size:8px' >{{meta.status}}</p>",
+							"    </div>",
+							"    <div class=\"uk-card-footer\">",
+							"        <a href=\"#\" class=\"uk-button uk-button-text\">{{like_count}} likes</a> &nbsp;",
+							"        <a href=\"#\" class=\"uk-button uk-button-text\">{{comment_count}} comments</a>",
+							"    </div>",
+							"</div>",
+							"{{/each}}",
+							"<script src=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit.min.js\"></script>",
+							"<script src=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit-icons.min.js\"></script>",
+							"</body>",
+							"",
+							"`",
+							"",
+							"pm.visualizer.set(template, {",
+							"    // Pass the response body parsed as JSON as `data`",
+							"    r: pm.response.json()",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/posts?offset=0&limit=20&type=all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0",
+							"description": "Number of items to skip before returning the results."
+						},
+						{
+							"key": "limit",
+							"value": "20",
+							"description": "Maximum number of items to return."
+						},
+						{
+							"key": "type",
+							"value": "all",
+							"description": "(Required) type of possts to be retrived."
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List of post",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts?offset=0&limit=20&type=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "type",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 13,\n  \"type\": \"Image\",\n  \"owner\": {\n   \"id\": 10,\n   \"name\": \"Pranjal Pandey\",\n   \"username\": \"physcocoede\",\n   \"image\": \"example.com/physcocode/profile.png\"\n  },\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"visibility\": \"public\",\n  \"meta\": {\n   \"status\": \"I am a example status update with image\",\n   \"image\": \"example.com/image.png\"\n  },\n  \"like_count\": 9,\n  \"comment_count\": 12\n },\n {\n  \"id\": 19,\n  \"type\": \"Text\",\n  \"owner\": {\n   \"id\": 10,\n   \"name\": \"Pranjal Pandey\",\n   \"username\": \"physcocoede\",\n   \"image\": \"example.com/physcocode/profile.png\"\n  },\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"visibility\": \"public\",\n  \"meta\": {\n   \"status\": \"I am a example of text status update !\"\n  },\n  \"like_count\": 22,\n  \"comment_count\": 4\n },\n {\n  \"id\": 33,\n  \"type\": \"Video\",\n  \"owner\": {\n   \"id\": 12,\n   \"name\": \"Vineet Singh\",\n   \"username\": \"vineed\",\n   \"image\": \"example.com/vineed/profile.png\"\n  },\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"visibility\": \"public\",\n  \"meta\": {\n   \"status\": \"I am a example of text status update !\",\n   \"video\": \"example.com/video.mp4\"\n  },\n  \"like_count\": 22,\n  \"comment_count\": 4\n },\n {\n  \"id\": 23,\n  \"type\": \"Slideshow\",\n  \"owner\": {\n   \"id\": 12,\n   \"name\": \"Vineet Singh\",\n   \"username\": \"vineed\",\n   \"image\": \"example.com/vineed/profile.png\"\n  },\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"visibility\": \"public\",\n  \"meta\": {\n   \"status\": \"I am a example of slideshow update !\",\n   \"image\": [\n    \"example.com/image1.png\",\n    \"example.com/image2.png\",\n    \"example.com/image3.png\"\n   ]\n  },\n  \"like_count\": 28,\n  \"comment_count\": 9\n }\n]"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts?offset=0&limit=20&type=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "type",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a single comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/comments/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"comments",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{comment_id}}",
+							"type": "string",
+							"description": "(Required) ID of the comment"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/comments/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Comment Successfuly deleted",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/comments/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"comment Successfuly Deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update a comment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 23,\n    \"post\": 32,\n    \"owner\": 10,\n    \"body\": \"The updated comment\",\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/comments/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"comments",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{comment_id}}",
+							"type": "string",
+							"description": "(Required) ID of the comment"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Comment after being updated",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 23,\n    \"post\": 32,\n    \"owner\": 10,\n    \"body\": \"i like this post\",\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 23,\n \"post\": 32,\n \"owner\": 10,\n \"body\": \"The updated comment\",\n \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 23,\n    \"post\": 32,\n    \"owner\": 10,\n    \"body\": \"i like this post\",\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a comment and attach to post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 23,\n    \"post\": 32,\n    \"owner\": 10,\n    \"body\": \"The updated comment\",\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 23,\n    \"post\": 32,\n    \"owner\": 10,\n    \"body\": \"i like this post\",\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Comment Successfuly added",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 23,\n    \"post\": 32,\n    \"owner\": 10,\n    \"body\": \"i like this post\",\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 201,\n \"message\": \"comment Successfuly Added\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get comments of a post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<head>",
+							"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/css/uikit.min.css\" />",
+							"</head>",
+							"<body>",
+							"{{#each r}}",
+							"<div class=\"uk-card uk-card-default uk-width-1-2 uk-align-center\">",
+							"",
+							"<article class=\"uk-comment\">",
+							"    <header class=\"uk-comment-header\">",
+							"        <div class=\"uk-grid-medium uk-flex-middle\" uk-grid>",
+							"            <div class=\"uk-width-auto\">",
+							"                <img class=\"uk-comment-avatar\" src=\"https://www.bathcollege.ac.uk/wp-content/uploads/2018/05/default-avatar.png\" width=\"80\" height=\"80\" alt=\"\">",
+							"            </div>",
+							"            <div class=\"uk-width-expand\">",
+							"                <h4 class=\"uk-comment-title uk-margin-remove\"><a class=\"uk-link-reset\" href=\"#\">{{owner.name}}</a></h4>",
+							"                <ul class=\"uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top\">",
+							"                    <li><a href=\"#\">12 days ago</a></li>",
+							"                </ul>",
+							"            </div>",
+							"        </div>",
+							"    </header>",
+							"    <div class=\"uk-comment-body\" style=\"margin-left:10px\">",
+							"        <p>{{body}}</p>",
+							"    </div>",
+							"</article>",
+							"</div>",
+							"{{/each}}",
+							"<script src=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit.min.js\"></script>",
+							"<script src=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit-icons.min.js\"></script>",
+							"</body>",
+							"",
+							"`",
+							"",
+							"pm.visualizer.set(template, {",
+							"    // Pass the response body parsed as JSON as `data`",
+							"    r: pm.response.json()",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/comments?post_id={{post_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "post_id",
+							"value": "{{post_id}}",
+							"description": "(Required) Type of user to be retrived."
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/comments?post_id=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "List comment for a post",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/comments?post_id=13",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 23,\n  \"post\": 32,\n  \"owner\": {\n      \"id\":10,\n      \"name\": \"Pranjal Pandey\",\n      \"username\": \"physcocode\",\n      \"img\": \"example.com/physcocode/profile.png\"\n\n  },\n  \"body\": \"I like this post\",\n  \"created_at\": \"2017-07-21T17:32:28Z\"\n },\n {\n  \"id\": 24,\n  \"post\": 32,\n  \"owner\": {\n      \"id\":14,\n      \"name\": \"Vineet Singh\",\n      \"username\": \"vineed\",\n      \"img\": \"example.com/vineed/profile.png\"\n\n  },\n  \"body\": \"This post seems great\",\n  \"created_at\": \"2017-07-21T17:32:28Z\"\n },\n {\n  \"id\": 25,\n  \"post\": 32,\n  \"owner\":{\n      \"id\":12,\n      \"name\": \"Ellie D\",\n      \"username\": \"its_ellie\",\n      \"img\": \"example.com/ellie/profile.png\"\n\n  },\n  \"body\": \"Hahah this is funny\",\n  \"created_at\": \"2017-07-21T17:32:28Z\"\n }\n]"
+				}
+			]
+		},
+		{
+			"name": "Like a post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"post\": 13,\n    \"owner\": 10,\n    \"id\": 11,\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}\n"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/likes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"likes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10,\n    \"post\": 25,\n    \"owner\": 10,\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/likes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"likes"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Post successfully liked",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10,\n    \"post\": 25,\n    \"owner\": 10,\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/likes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"likes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 201,\n \"message\": \"Post successfully liked\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get likes of a post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/likes?post_id={{post_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"likes"
+					],
+					"query": [
+						{
+							"key": "post_id",
+							"value": "{{post_id}}",
+							"description": "(Required) id of post whose likes need to be retrived"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/likes?post_id=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"likes"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "List user that likes post",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/likes?post_id=13",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"likes"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 10,\n  \"post\": 13,\n  \"owner\": {\n   \"id\": 10,\n   \"name\": \"Pranjal Pandey\",\n   \"username\": \"physcocoede\",\n   \"image\": \"example.com/physcocode/profile.png\"\n  },\n  \"created_at\": \"2017-07-21T17:32:28Z\"\n },\n {\n  \"id\": 13,\n  \"post\": 13,\n  \"owner\": {\n   \"id\": 12,\n   \"name\": \"Ellie D\",\n   \"username\": \"its_ellie\",\n   \"image\": \"example.com/ellie/profile.png\"\n  },\n  \"created_at\": \"2017-07-21T17:32:28Z\"\n },\n {\n  \"id\": 23,\n  \"post\": 13,\n  \"owner\": {\n   \"id\": 15,\n   \"name\": \"Vineet Singh\",\n   \"username\": \"vineed\",\n   \"image\": \"example.com/vineed/profile.png\"\n  },\n  \"created_at\": \"2017-07-21T17:32:28Z\"\n }\n]"
+				}
+			]
+		},
+		{
+			"name": "Unlike a post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/likes?post_id={{post_id}}&user_id={{user_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"likes"
+					],
+					"query": [
+						{
+							"key": "post_id",
+							"value": "{{post_id}}",
+							"description": "(Required) ID of post"
+						},
+						{
+							"key": "user_id",
+							"value": "{{user_id}}",
+							"description": "(Required) ID of user"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post successfully unliked",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/likes?post_id=13&user_id=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"likes"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "13"
+								},
+								{
+									"key": "user_id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Post successfully unliked\"\n}"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/likes?post_id=<long>&user_id=<long>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"likes"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "<long>"
+								},
+								{
+									"key": "user_id",
+									"value": "<long>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create new relation between two users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 11,\n    \"owner\": 10,\n    \"user\": 12,\n    \"type\": \"follow\",\n    \"bidirectional\": false,\n    \"meta\": {}\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/relations",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"relations"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Relation successfully created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 11,\n    \"owner\": 10,\n    \"user\": 12,\n    \"type\": \"follow\",\n    \"bidirectional\": false,\n    \"meta\": {}\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/relations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"relations"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 201,\n \"message\": \"Relation successfully created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get all relation of a user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/relations?user_id={{user_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"relations"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "{{user_id}}",
+							"description": "(Required) id of users whose relations is to be listed"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List user that are related to current user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/relations?user_id=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"relations"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 10,\n  \"owner\": 10,\n  \"user\": {\n   \"id\": 14,\n   \"name\": \"Pranjal Pandey\",\n   \"username\": \"physcocoede\",\n   \"image\": \"example.com/physcocode/profile.png\"\n  },\n  \"type\": \"follow\",\n  \"bidirectional\": false,\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"meta\": {}\n },\n {\n  \"id\": 13,\n  \"owner\": 10,\n  \"user\": {\n   \"id\": 12,\n   \"name\": \"Ellie D\",\n   \"username\": \"its_ellie\",\n   \"image\": \"example.com/ellie/profile.png\"\n  },\n  \"type\": \"follow\",\n  \"bidirectional\": false,\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"meta\": {}\n },\n {\n  \"id\": 23,\n  \"owner\": 10,\n  \"user\": {\n   \"id\": 15,\n   \"name\": \"Vineet Singh\",\n   \"username\": \"vineed\",\n   \"image\": \"example.com/vineed/profile.png\"\n  },\n  \"type\": \"follow\",\n  \"bidirectional\": false,\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"meta\": {}\n }\n]"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/relations?user_id=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"relations"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Remove relation between users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/relations?owner_id={{user_id}}&user_id=13",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"relations"
+					],
+					"query": [
+						{
+							"key": "owner_id",
+							"value": "{{user_id}}",
+							"description": "(Required) ID of user who is owner of relation (\"Followed by\")"
+						},
+						{
+							"key": "user_id",
+							"value": "13",
+							"description": "(Required) ID of user whom the owner is related to (\"Followed to\")"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Relation successfully removed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/relations?owner_id=<long>&user_id=<long>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"relations"
+							],
+							"query": [
+								{
+									"key": "owner_id",
+									"value": "<long>"
+								},
+								{
+									"key": "user_id",
+									"value": "<long>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Relation successfully removed \"\n}"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/relations?owner_id=<long>&user_id=<long>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"relations"
+							],
+							"query": [
+								{
+									"key": "owner_id",
+									"value": "<long>"
+								},
+								{
+									"key": "user_id",
+									"value": "<long>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Send message to a room",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"<long>\",\n    \"room\": \"<integer>\",\n    \"owner\": \"<integer>\",\n    \"message\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/messages",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Message Successfully sent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 12,\n    \"room\": 32,\n    \"owner\": 12,\n    \"message\": \"Hi whats up ?\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/messages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Message Successfully sent\"\n}"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 12,\n    \"room\": 32,\n    \"owner\": 12,\n    \"message\": \"Hi whats up ?\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/messages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a new Room",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 12,\n    \"type\": \"single\",\n    \"owner\": 10,\n    \"users\": \"12\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/messages/rooms",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"messages",
+						"rooms"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Room successfully created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 12,\n    \"type\": \"single\",\n    \"owner\": 10,\n    \"users\": 12\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/messages/rooms",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages",
+								"rooms"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Room successfully created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete a room",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/messages/rooms?id={{room_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"messages",
+						"rooms"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{room_id}}",
+							"description": "(Required) id of room to delete"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages/rooms?id=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages",
+								"rooms"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Successfully deleted room",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages/rooms?id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages",
+								"rooms"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Successfully deleted room\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get all messages of a room",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/messages?room_id={{room_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "room_id",
+							"value": "{{room_id}}",
+							"description": "(Required) id of room whose message to get"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List of messages in a room",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages?room_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "room_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 13,\n  \"room\": 1,\n  \"owner\": 12,\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"message\": \"Hi\"\n },\n {\n  \"id\": 16,\n  \"room\": 1,\n  \"owner\": 13,\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"message\": \"Hey, wassup?\"\n },\n {\n  \"id\": 18,\n  \"room\": 1,\n  \"owner\": 12,\n  \"created_at\": \"2017-07-21T17:32:28Z\",\n  \"message\": \"I am good\"\n }\n]"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages?room_id=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "room_id",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete all messages of a room",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/messages?room_id={{room_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "room_id",
+							"value": "{{room_id}}",
+							"description": "(Required) id of room whose message to delete"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages?room_id=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "room_id",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Successfully deleted all message in room",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages?room_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "room_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Successfully deleted all message in room\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete a single message",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/messages/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"messages",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "12",
+							"type": "string",
+							"description": "(Required) id of message to delete"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Successfully deleted message",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Successfully deleted message\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Creat new Activity in Feed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"owner\": 10,\n    \"action\": \"followed\",\n    \"object\": 20,\n    \"type\": \"follow\",\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/feeds",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"feeds"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Feed successfully added",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5,\n    \"owner\": 10,\n    \"action\": \"followed\",\n    \"object\": 20,\n    \"type\": \"follow\",\n    \"created_at\": \"2017-07-21T17:32:28Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/feeds",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feeds"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Message Successfully sent\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get all activities in feed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<head>",
+							"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/css/uikit.min.css\" />",
+							"</head>",
+							"<body>",
+							"{{#each r}}",
+							"<div class=\"uk-card uk-card-default uk-width-4-5 uk-align-center\">",
+							"    <div class=\"uk-card-header\">",
+							"",
+							"<p class=\"uk-text-meta \">{{owner.name}} {{action}} {{#if object.type}} {{object.type}} {{/if}} {{#if object.name}} {{object.name}} {{/if}}</p>",
+							"{{#if object.type}}",
+							"</div>",
+							"    <div class=\"uk-card-body\">",
+							"",
+							"<div class=\"uk-card uk-card-default uk-width-2-3 uk-align-center\">",
+							"    <div class=\"uk-card-header\">",
+							"        <div class=\"uk-grid-small uk-flex-middle\" uk-grid>",
+							"            <div class=\"uk-width-auto\">",
+							"                <img class=\"uk-border-circle\" width=\"40\" height=\"40\" src=\"https://www.bathcollege.ac.uk/wp-content/uploads/2018/05/default-avatar.png\">",
+							"            </div>",
+							"            <div class=\"uk-width-expand\">",
+							"                <h3 class=\"uk-card-title uk-margin-remove-bottom\">{{object.owner.name}}</h3>",
+							"                <p class=\"uk-text-meta uk-margin-remove-top\">{{object.owner.username}}</p>",
+							"            </div>",
+							"        </div>",
+							"    </div>",
+							"                {{#if object.meta.image}}",
+							"                <div class=\"uk-card-media-top\">",
+							"                <img src=\"https://images.unsplash.com/photo-1611406191562-30bcd6478dc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80\" alt=\"\">",
+							"            </div>",
+							"            {{/if}}",
+							"    <div class=\"uk-card-body\">",
+							"        <p style:'font-size:8px' >{{object.meta.status}}</p>",
+							"    </div>",
+							"    <div class=\"uk-card-footer\">",
+							"        <a href=\"#\" class=\"uk-button uk-button-text\">{{object.like_count}} likes</a> &nbsp;",
+							"        <a href=\"#\" class=\"uk-button uk-button-text\">{{object.comment_count}} comments</a>",
+							"    </div>",
+							"</div>",
+							"{{/if}}",
+							"</div>",
+							"</div>",
+							"{{/each}}",
+							"<script src=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit.min.js\"></script>",
+							"<script src=\"https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit-icons.min.js\"></script>",
+							"</body>",
+							"",
+							"`",
+							"",
+							"pm.visualizer.set(template, {",
+							"    // Pass the response body parsed as JSON as `data`",
+							"    r: pm.response.json()",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/feeds?type=all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"feeds"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "all",
+							"description": "(Required) type of feed"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/feeds?type=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feeds"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "List of Activities in feed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/feeds?type=all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feeds"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 12,\n  \"owner\": {\n   \"id\": 10,\n   \"name\": \"Pranjal Pandey\",\n   \"username\": \"physcocode\"\n  },\n  \"action\": \"liked\",\n  \"object\": {\n   \"id\": 10,\n   \"type\": \"Image\",\n   \"owner\": {\n    \"id\": 10,\n    \"name\": \"Pranjal Pandey\",\n    \"username\": \"physcocoede\",\n    \"image\": \"example.com/physcocode/profile.png\"\n   },\n   \"created_at\": \"2017-07-21T17:32:28Z\",\n   \"visibility\": \"public\",\n   \"meta\": {\n    \"status\": \"I am a example status update with image\",\n    \"image\": \"example.com/image.png\"\n   },\n   \"like_count\": 9,\n   \"comment_count\": 12\n  },\n  \"type\": \"like\"\n },\n {\n  \"id\": 13,\n  \"owner\": {\n   \"id\": 10,\n   \"name\": \"Pranjal Pandey\",\n   \"username\": \"physcocode\"\n  },\n  \"action\": \"followed\",\n  \"object\": {\n   \"id\": 12,\n   \"name\": \"Vineet Singh\",\n   \"username\": \"vineed\"\n  },\n  \"type\": \"follow\"\n }\n]"
+				}
+			]
+		},
+		{
+			"name": "delete an activity from feed",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/feeds/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"feeds",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "12",
+							"type": "string",
+							"description": "(Required) id of feed activity to delete"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/feeds/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feeds",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 500,\n \"message\": \"Oops something went wrong !\"\n}"
+				},
+				{
+					"name": "Successfully deleted activity from feed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/feeds/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feeds",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": 200,\n \"message\": \"Successfully deleted activity from feed\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
