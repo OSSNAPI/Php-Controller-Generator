@@ -1,5 +1,5 @@
 # Php-Controller-Generator
- A simple and robust tool to generate PHP Controllers using postman exports, currently it is designed to generate code for [Scrawler Framework](https://github.com/scrawler-php/scrawler) but it can be tweaked a little to generate controller and stubs for any PHP Framework
+ A simple and robust tool to generate PHP Controllers using postman exports, currently it is designed to generate code for [Scrawler Framework](https://github.com/scrawler-php/scrawler) but it can be tweaked a little to generate controller and stubs for any PHP Framework. This was created as part of **postman hackathon**
 
 ## How to use it
 - Download the zip file from the latest release
